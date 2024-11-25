@@ -1,0 +1,280 @@
+* {
+    font-family: 'Lucida console' , monospace;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #000;
+    background-image: url("/images/backgroundcyberimg.jpeg");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; /*takes full viewp*/
+}
+
+.navbar {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    margin-bottom: 2rem;
+    /*  create my lovely navbar aligned n in the center  */}
+
+.navbar__header {
+    display: flex;
+    list-style: none;
+    text-align: center;
+}/* vertical , in the center removes li dots*/
+
+.navbar__items {
+    text-decoration: none;
+    padding: 0 1rem;
+}/* remove underline and adds space
+
+
+/*
+HOME PAGE / ABOUT ME
+*/
+
+
+
+
+.main__container {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: larger;
+} /* fi */
+/* 
+.main__container h1{
+    margin-bottom: 10px;
+}
+ */
+
+.content__wrapper {
+    margin-top: 20px;
+    display: flex; /* flexbox */
+    align-items: center; /* vertically centers */
+    justify-content: space-between; /* spreads the items apart */
+    gap: 45px; /* adds space between image and text */
+}
+
+.my__img--container img {
+    width: 200px; /* adjusting image size */
+    border-radius: 50%; /* makes the image circular */
+    object-fit: cover; /*covered properly*/
+}
+
+.text__content {
+    color: #ccc;
+    font-size: 20px;
+}
+
+/*mobile*/
+@media (max-width: 768px) {
+    body{
+        background-size: contain; /* image fits within the viewp */
+        background-position: top; /* adjusts positioning for smaller screens */
+        /*background-repeat: no-repeat;*/
+    }
+    
+    .navbar {
+        /*position: fixed;*/
+        margin-top: 35px;
+    }
+    .content__wrapper {
+        flex-direction: column; /* stacks in column */
+        text-align: center; /* centers text */
+        margin-bottom: 2rem; /* should add space to the bottom*/
+    }
+
+    .my__img--container img {
+        margin-bottom: 20px; /* adds space below the image */
+    }
+}
+
+
+/*
+GALLERY PAGE
+*/
+
+.gallery__content {
+    text-align: center;
+    color: #ccc;
+    margin: 0 auto;
+    font-size: larger;
+    padding: 10px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4x2 */
+    gap: 20px; /* space between */
+    margin: 20px auto; /*center the grid */
+    width: 60%; /* max width for the grid */
+}
+
+.image-grid img {
+    width: 100%; /* images responsive within their grid cell */
+    height: auto; /* maintain aspect ratio */
+    border-radius: 10px; /* rounded corners */
+}
+
+/* Modal */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* takes full size , set up image position*/
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 85%; 
+    max-height: 85%; 
+    border-radius: 10px;
+/*    fix image view */
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+/*    position of close button*/
+}
+
+/*mobile*/
+@media (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+        width: 80%;
+    /*  1r1c, bigger image*/
+    }
+}
+
+
+/*
+COMMENTS PAGE AND SECTION
+*/
+
+.comments__container {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(41, 41, 41, 0.6);
+    border-radius: 5px
+/*    fix container size,color,opacity*/
+}
+
+h1 {
+    text-align: center;
+    color: #ccc;
+    margin: 0 auto;
+    padding: 10px;
+    /*    fix text size/gap,color,position*/
+}
+
+h3 {
+    text-align: center;
+    color: #ccc;
+    margin: 20px 10px 10px 0;
+/*    fix text size/gap,color,position*/
+}
+
+.comment-form input, .comment-form textarea {
+    /*fix com-f color size , position */
+    background-color: rgba(41, 41, 41);
+    width: 60%;
+    padding: 8px;
+    margin-top: 20px;
+    /*make the border white and visible*/
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: rgba(41, 41, 41);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    /* button grey, text white; no border,rounded; bigger size  */
+}
+
+button:hover {
+    background-color: rgba(41, 41, 41);
+/* mb will change*/
+}
+
+#userName , #commentText {
+    color: #ccc;
+/*    the written text is white*/
+}
+
+.comments-display {
+    color: #ccc;
+    /* white comments */
+}
+
+.comment {
+    background-color: rgba(41, 41, 41, 0.8);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    /* fiz color , size, round corners*/
+}
+
+
+/*fix name and date - color and size*/
+.comment-name {
+    font-weight: bold;
+    color: #ccc;
+    margin-bottom: 5px;
+}
+
+.comment-date {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+
+/* fix button size and color*/
+#exportBtn, #clearBtn {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+#clearBtn {
+    background-color: #6C0000;
+}
+
+/*mobile*/
+@media (max-width: 780px) {
+    .comments__container{
+        width: 80%;
+        background-color: rgba(41, 41, 41, 0.7);
+    /*    fix container size and opacity */
+    }
+
+    .comment-form input, .comment-form textarea {
+        width:80%;
+        padding:15px;
+    /*    bigger size*/
+    }
+}

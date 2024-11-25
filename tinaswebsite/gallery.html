@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Tina's</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Navbar Section -->
+
+<nav class="navbar">
+  <div class="navbar__container">
+    <div class="navbar__toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </div>
+  <ul class="navbar__header">
+    <li><a href="index.html" class="navbar__items">♱About me♱</a></li>
+    <li><a href="gallery.html" class="navbar__items">♱Gallery♱</a></li>
+    <li><a href="comments.html" class="navbar__items">♱Comments♱</a></li>
+  </ul>
+</nav>
+
+<!-- Gallery Section -->
+
+<section class="gallery">
+  <div class="gallery__content">
+    <h1>⁺‧₊˚ ཐི⋆♱⋆ཋྀ ˚₊‧⁺</h1>
+    <h3>Welcome to my small Gallery</h3>
+    <h3>Think of this as my pet board or smth :D</h3>
+  </div>
+<!-- images content -->
+  <div class="image__content">
+    <div class="image-grid">
+    <img src="/images/img1.jpeg" alt="Marsi 1" onclick="openModal(this)">
+    <img src="/images/img2.jpeg" alt="Marsi 2" onclick="openModal(this)">
+    <img src="/images/img3.jpeg" alt="Marsi 3" onclick="openModal(this)">
+    <img src="/images/img4.jpeg" alt="Marsi 4" onclick="openModal(this)">
+    <img src="/images/img5.jpeg" alt="Kuncho 1" onclick="openModal(this)">
+    <img src="/images/img6.jpeg" alt="Kuncho 2" onclick="openModal(this)">
+    <img src="/images/img7.jpg" alt="Kuncho 3" onclick="openModal(this)">
+    <img src="/images/img8.jpeg" alt="Kuncho 4" onclick="openModal(this)">
+    </div>
+<!-- lightbox on images -->
+    <div id="imageModal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="modalImage">
+    </div>
+  </div>
+</section>
+<script src="scripts.js"></script>
+</body>
+</html>
